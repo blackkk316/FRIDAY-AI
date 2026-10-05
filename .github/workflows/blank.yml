@@ -1,4 +1,4 @@
-herename: Build FRIDAY AI APK
+name: Build FRIDAY AI APK
 
 on:
   push:
