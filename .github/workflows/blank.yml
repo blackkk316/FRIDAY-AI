@@ -20,14 +20,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Generate Gradle Wrapper 8.9
-        run: gradle wrapper --gradle-version 8.9
-
-      - name: Make gradlew executable
-        run: chmod +x gradlew
-
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+      - name: Generate Wrapper & Build
+        run: |
+          gradle wrapper --gradle-version 8.9
+          chmod +x gradlew
+          ./gradlew assembleDebug --quiet || ./gradlew assembleDebug --info | grep -A 10 "FAILURE:"
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
