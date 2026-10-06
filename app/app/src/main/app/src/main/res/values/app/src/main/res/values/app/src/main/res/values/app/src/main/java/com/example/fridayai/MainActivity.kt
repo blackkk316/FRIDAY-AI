@@ -57,3 +57,14 @@ class MainActivity : Activity() {
         setContentView(layout)
     }
 }
+override fun onBackPressed() {
+    // Back button दबाने पर कुछ नहीं होगा
+}   layout.addView(button)
+
+        setContentView(layout)
+    }
+
+    override fun onBackPressed() {
+        // Back button दबाने पर app बंद नहीं होगा
+    }
+}
