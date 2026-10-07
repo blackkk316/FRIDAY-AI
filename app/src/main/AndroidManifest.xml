@@ -20,3 +20,8 @@
     </application>
 
 </manifest>
+<application
+    android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+    android:label="FRIDAY AI"
+    android:allowBackup="true"
+    android:supportsRtl="true">
