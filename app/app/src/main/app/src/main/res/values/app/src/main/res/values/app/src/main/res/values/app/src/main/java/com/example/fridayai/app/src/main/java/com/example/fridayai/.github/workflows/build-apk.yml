@@ -32,3 +32,13 @@ jobs:
         with:
           name: FRIDAY-AI-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
+- name: Check AndroidManifest
+        run: |
+          echo "===== AndroidManifest.xml ====="
+          cat -n app/src/main/AndroidManifest.xml
+          echo "===== XML CHECK ====="
+          python3 - <<'PY'
+          import xml.etree.ElementTree as ET
+          ET.parse("app/src/main/AndroidManifest.xml")
+          print("XML IS VALID")
+          PY
